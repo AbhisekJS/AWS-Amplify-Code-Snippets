@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "myapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Abhi\\myapp\\amplify\\backend\\api\\myapp\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-01-05T17:59:55.010Z",
+      "keyDescription": "public"
+    }
+  }
+}
