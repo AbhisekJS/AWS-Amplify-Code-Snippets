@@ -24,7 +24,6 @@ function App() {
   console.log(recipes);
 
   const createNewRecipe = async () => {
-    // const name = prompt("What is the name of the recipe?");
     const { data } = await API.graphql({
       query: createRecipe,
       variables: { input: { name } },
@@ -49,6 +48,7 @@ function App() {
     setEdit(false);
     setIdValue("");
     setName("");
+    
   };
 
   const editItem = (id) => {
@@ -58,7 +58,7 @@ function App() {
   };
 
   return (
-    <div style={{marginTop:'1rem'}}>
+    <div style={{ marginTop: "1rem" }}>
       <Row>
         <Col span={12} offset={6}>
           <Input.Group compact>
@@ -72,7 +72,7 @@ function App() {
               type="primary"
               onClick={edit ? updateRecipeItem : createNewRecipe}
             >
-              {edit ? "Edit" : "Submit"}
+              {edit ? "Update" : "Submit"}
             </Button>
           </Input.Group>
         </Col>
@@ -88,7 +88,7 @@ function App() {
                   title={<Typography.Text>{item.name}</Typography.Text>}
                 />
                 <Button
-                  type="ghost"
+                  type="text"
                   onClick={() => {
                     editItem(item.id);
                   }}
@@ -96,7 +96,8 @@ function App() {
                   Edit
                 </Button>
                 <Button
-                  type="danger"
+                  type="text"
+                  danger
                   onClick={() => {
                     deleteRecipeItem(item.id);
                   }}
@@ -106,7 +107,6 @@ function App() {
               </List.Item>
             )}
           />
-          ,
         </Col>
       </Row>
     </div>
